@@ -962,3 +962,15 @@ main.addEventListener("mouseover",function(e){
   cursor.style.left = `${e.x}px`
   cursor.style.top = `${e.y}px`
 })
+
+
+// **************Slide menu******************
+
+let menu = document.querySelector('#silde-menu')
+let icon = document.querySelector('#icon>i')
+console.log(icon);
+icon.addEventListener('click',function(){
+  // console.log('hey');
+  menu.style.top = '0%'
+  menu.style.zIndex = 3
+})
