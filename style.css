@@ -28,7 +28,8 @@ html,body{
     background-color: #fff;
     position: absolute;
     top:-100%;
-    transition: all 2s ease;
+    z-index: 999;
+    transition: all .2s ease;
 }
 #nav-bar{
     width: 100%;
@@ -36,7 +37,13 @@ html,body{
     /* background-color: red; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+}
+#nav-bar>i{
+    padding-right: 9vw;
+    padding-top: 3vw;
+    font-size: 2vw;
+    z-index: 999;
 }
 #container{
     width: 100%;
@@ -159,6 +166,7 @@ html,body{
 :root{
     --color:#000;
     --text-color:#fff;
+    --second-canvas:#86f6e5;
 
 }
 #cursor{
@@ -169,13 +177,8 @@ html,body{
     position: fixed;
     z-index: 999;
 }
-#page1{
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    /* background-color: rebeccapurple; */
-}
-#page1 #nav{
+/* *************Nav-bar *************** */
+#nav{
     width: 100%;
     height: 20vh;
     /* background-color: yellow; */
@@ -184,9 +187,19 @@ html,body{
     justify-content: space-between;
     position:fixed;
     top: 0%;
-    z-index: 999;
+    z-index: 9999;
     
 }
+body>img{
+    position: absolute;
+    top: 35%;
+    left: 0;
+    z-index: 9999;
+    width: 3%;
+    height: 25%;
+}
+
+
 #side-text{
     width: 4vw;
     height: 25vh;
@@ -227,10 +240,23 @@ html,body{
     margin-right: 6vw;
     font-size: 2.3vw;
     color: var(--text-color);
+    z-index: 9999;
+    color: black;
+    transition: all;
+}
+
+/* ************** page-1********************8 */
+#page1{
+    width: 100vw;
+    height: 105vh;
+    position: relative;
+    /* z-index: -1; */
+    /* background-color: rebeccapurple; */
 }
 #page1 canvas{
     width: 100vw;
     height: 100vh;
+    position: relative;
 }
 #page1 h1{
     position: absolute;
@@ -296,7 +322,9 @@ html,body{
     color: var(--text-color);
     z-index: 999;
 }
+
 /* *************Page-2**************** */
+
 #page2{
     width: 100vw;
     height: 180vh;
@@ -601,7 +629,7 @@ html,body{
     font-family: c;
     font-weight: 100;
     position: absolute;
-    left: -10%;
+    left: -20%;
     top: 5%;
 }
 #page-8 h1{
@@ -616,12 +644,140 @@ html,body{
 }
 
 /* *********** Page -9************** */
-#page-9{
+#page9{
     width: 100vw;
     height: 100vh;
+    position: relative;
 }
-#page-9>canvas{
+#page9>h2{
+   position: absolute;
+   top: 10%;
+   left: -10%;
+    font-family: c;
+    font-weight: 100;
+    color: white;
+}
+#page9 canvas{
     width: 100vw;
     height: 100vh;
+    /* position: relative; */
+}
+
+/* **************page-10************* */
+
+#page-10{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+#page-10>h1{
+    position: absolute;
+    top: 10%;
+    left: -25%;
+    font-family: c;
+    font-weight: 100;
+    color: var(--color);
+    z-index: 999;
+    font-size: 1.4vw;
+}
+#inner-page{
+    width: 80%;
+    height: 80%;
+    background-color: var(--second-canvas);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+#inner-page>h1{
+    width: 65%;
+    margin-top: 11vw;
+    font-size: 2.4vw;
+    padding-left: 4vw;
+    font-family: a;
+    padding-bottom: 2vw;
+    color: white;
+    font-weight: 100;
+}
+#inner-bottom{
+    width: 100%;
+    height: 40%;
+    /* background-color: palevioletred; */
+}
+.wrap{
+    width: 60%;
+    height: 100%;
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9vw;
+}
+.elem h3{
+    border-bottom: .1vw solid white;
+    padding: 1vw 0;
+    font-size: 1.2vw;
+    font-family: c;
+    color: white;
+    font-weight: 100;
+}
+.elem h4{
+    padding: 1vw 0;
+    font-size: 1.2vw;
+    font-family: c;
+    color: white;
+    font-weight: 100;
+}
+
+
+/* ************* Page-11 ************** */
+
+#page-11{
+    width: 100vw;
+    height: 80vh;
+    background-color: #fffaf0;
+    position: relative;
+}
+#page-11>h2{
+    /* padding: 2vw 4vw; */
+    font-size: 1.2vw;
+    padding-top: 5vw;
+    padding-left: 4vw;
+    font-family: c;
+    font-weight: 100;
+}
+#page-11>h1{
+    font-size: 3vw;
+    width: 50%;
+    padding: 2vw 4vw; 
+    font-family: a;
+    font-weight: 100;
+}
+#right-link p{
+    font-size: 1.4vw;
+    position: relative;
+    left: 90%;
+    font-family: c;
+    font-weight: 100;
+}
+#right-link p::after{
+    content: ('a');
+    width: 100px;
+    height: 5px;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+}
+
+
+/* *******************footer ***************** */
+footer{
+    width: 100vw;
+    height: 100vh;
+    background-color: rebeccapurple;
     position: relative;
 }
