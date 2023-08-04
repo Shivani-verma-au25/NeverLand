@@ -367,6 +367,8 @@ gsap.to('#page1>canvas',{
   stagger:.1
 })
 
+// image change nav
+
 // page2  image up 
 gsap.to('#page2>img',{
   scrollTrigger:{
@@ -852,7 +854,7 @@ let tl6 = gsap.timeline({
     start:'40% 30%',
     end:'60% 70%',
     // markers:true,
-    scrub:1
+    scrub:.15
   }
 })
 tl6.to('#nav>svg',{
@@ -865,7 +867,7 @@ let cursor = document.querySelector('#cursor')
 let main = document.querySelector('#main')
 
 main.addEventListener("mouseover",function(e){
-  cursor.style.left = `${e.x}px`
+  cursor.style.left = `${e.x+30}px`
   cursor.style.top = `${e.y}px`
 })
 
@@ -880,17 +882,38 @@ let flag = 0
 icon.addEventListener('click',function(){
   if (flag == 0) {
     slide_menu.style.top = '0%'
+    icon.style.mixBlendMode = "color-burn"
     icon.style.innerHTML = '<i class="ri-close-fill"></i>'
     flag = 1
   } else {
     slide_menu.style.top = '-100%'
     icon.style.innerHTML = '<i class="ri-menu-line"></i>'
-
     flag = 0
   }
 
 })
 
 
+// page-1 scroll hover
+let page_dwn = document.querySelector('#scrollDown>h5')
+console.log(page_dwn);
+page_dwn.addEventListener('mouseenter',function(e){
+  cursor.style.mixBlendMode = 'diffrence'
+  cursor.style.scale = '3'
+})
+page_dwn.addEventListener("mouseleave",function(e){
+  cursor.style.scale = '1'
 
+})
+
+// site of the day
+
+let img = document.querySelector("body>img")
+// console.log(img);
+img.addEventListener('mouseenter',function(){
+  cursor.style.scale = '3'
+})
+img.addEventListener('mouseleave',function(){
+  cursor.style.scale = '1'
+})
 
