@@ -866,15 +866,24 @@ tl6.to('#nav>svg',{
 let cursor = document.querySelector('#cursor')
 let main = document.querySelector('#main')
 
-main.addEventListener("mouseover",function(e){
+main.addEventListener("mousemove",function(e){
   cursor.style.left = `${e.x+30}px`
   cursor.style.top = `${e.y}px`
 })
 
+// document.querySelector("#cursor");
+
+// main.addEventListener("mousemove",function(dets){
+//   cursor.style.left = dets.x + "px";
+//   cursor.style.top = dets.y + "px";
+// })
+
+
+
 
 // **************Slide menu******************
 
-let icon = document.querySelector('#icon>h1')
+let icon = document.querySelector('#icon>h6')
 let slide_menu = document.querySelector('#silde-menu')
 console.log(icon);
 
@@ -882,26 +891,30 @@ let flag = 0
 icon.addEventListener('click',function(){
   if (flag == 0) {
     slide_menu.style.top = '0%'
-    icon.style.mixBlendMode = "color-burn"
-    icon.style.innerHTML = '<i class="ri-close-fill"></i>'
+    icon.style.dispaly = ''
     flag = 1
   } else {
     slide_menu.style.top = '-100%'
-    icon.style.innerHTML = '<i class="ri-menu-line"></i>'
+    
     flag = 0
+
   }
 
 })
 
 
 // page-1 scroll hover
-let page_dwn = document.querySelector('#scrollDown>h5')
-console.log(page_dwn);
-page_dwn.addEventListener('mouseenter',function(e){
-  cursor.style.mixBlendMode = 'diffrence'
-  cursor.style.scale = '3'
+let scrollDown = document.querySelector('#scrollDown')
+// console.log(scrollDown);
+scrollDown.addEventListener('mouseenter',function(){
+  cursor.style.mixBlendMode = `difference`
+  cursor.style.backgroundColor = `#fff`
+  cursor.style.scale = '2'
 })
-page_dwn.addEventListener("mouseleave",function(e){
+scrollDown.addEventListener("mouseleave",function(){
+  cursor.style.scale = '1'
+  cursor.style.mixBlendMode = `normal`
+  cursor.style.backgroundColor = `#000`
   cursor.style.scale = '1'
 
 })
@@ -910,10 +923,92 @@ page_dwn.addEventListener("mouseleave",function(e){
 
 let img = document.querySelector("body>img")
 // console.log(img);
-img.addEventListener('mouseenter',function(){
+// img.addEventListener('mouseenter',function(){
+//   cursor.style.scale = '1.1'
+//   cursor.style.mixBlendMode = `difference`
+//   cursor.style.backgroundColor = `#fff`
+// })
+// img.addEventListener('mouseleave',function(){
+//   cursor.style.scale = '1'
+// })
+
+// ******************footer f-left**********************
+
+let ask_any = document.querySelector('#f-left>p')
+console.log(ask_any);
+ask_any.addEventListener('mouseenter',function(){
+  // alert('im here')
   cursor.style.scale = '3'
+  cursor.style.mixBlendMode = `color-burn`
+  cursor.style.backgroundColor = `blue`
+
 })
-img.addEventListener('mouseleave',function(){
+ask_any.addEventListener('mouseleave',function(){
   cursor.style.scale = '1'
+  cursor.style.mixBlendMode = `normal`
+  cursor.style.backgroundColor = `#000`
 })
 
+// **************** second-div *******************
+
+let second_div = document.querySelector('#second-div>p')
+
+second_div.addEventListener('maouseenter',function(){
+  cursor.style.scale = '3'
+  cursor.style.mixBlendMode = `color-burn`
+  cursor.style.backgroundColor = `blue`
+})
+second_div.addEventListener('mouseleave',function(){
+  cursor.style.scale = '1'
+  cursor.style.mixBlendMode = `normal`
+  cursor.style.backgroundColor = `#000`
+})
+
+
+// ******************* s-3**************************
+
+let s_icon = document.querySelectorAll('#s-3>img')
+s_icon.forEach(function(item){
+  item.addEventListener('mouseenter',function(){
+      cursor.style.scale = '3'
+      cursor.style.mixBlendMode = `color-burn`
+      cursor.style.backgroundColor = `blue`
+  })
+  item.addEventListener('mouseleave',function(){
+      cursor.style.scale = '1'
+      cursor.style.mixBlendMode = `normal`
+      cursor.style.backgroundColor = `#000`
+  })
+})
+
+
+// ******************* footer second*****************************
+
+let sec = document.querySelector('#second>h2')
+
+sec.addEventListener('mouseenter',function(){
+  cursor.style.scale = '3'
+  cursor.style.mixBlendMode = `color-burn`
+  // cursor.style.backgroundColor = `#dd2d56`
+  cursor.style.backgroundColor = `blue`
+})
+sec.addEventListener('mouseleave',function(){
+  cursor.style.scale = '1'
+  cursor.style.mixBlendMode = `normal`
+  cursor.style.backgroundColor = `#000`
+})
+
+
+// ************** page-11 *****************
+let fly = document.querySelector('#right-link>p')
+
+fly.addEventListener('mouseenter',function(){
+  cursor.style.scale = '3'
+  cursor.style.mixBlendMode = `color-burn`
+  cursor.style.backgroundColor = `blue`
+})
+fly.addEventListener('mouseleave',function(){
+  cursor.style.scale = '1'
+  cursor.style.mixBlendMode = `normal`
+  cursor.style.backgroundColor = `#000`
+})

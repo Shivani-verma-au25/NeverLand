@@ -178,6 +178,8 @@ html,body{
     --text-color:#fff;
     --second-canvas:#86f6e5;
     --tex-secndary-color:#e591a4;
+    /* --tex-secndary-color:#dd2d56; */
+
 }
 #cursor{
     width: 15px;
@@ -185,7 +187,7 @@ html,body{
     background-color: black;
     border-radius: 50%;
     position: fixed;
-    z-index: 999;
+    z-index: 9999999;
 }
 /* *************Nav-bar *************** */
 #nav{
@@ -238,6 +240,7 @@ body>img{
     
     /* transform: rotate(-90deg); */
 }
+
 #nav>svg{
     width:60px;
     height:60px;
@@ -245,6 +248,8 @@ body>img{
     color: #fff;
     margin-left: 48vw;
     margin-top: 3vw;
+    /* mix-blend-mode:color-burn; */
+    /* background-color: #c497a2; */
 }
 #icon i{
     margin-right: 6vw;
@@ -775,6 +780,7 @@ body>img{
     /* background-color: red; */
     text-align: center;
     padding-bottom: .4vw;
+    color: var(--tex-secndary-color);
 
 }
 #right-link p::after{
@@ -992,7 +998,7 @@ footer{
     background-color: #fffaf0;
 }
 #s-2{
-    margin-right: 4vw;
+    margin-right: 2vw;
 }
 #s-3{
     display: flex;
@@ -1002,7 +1008,7 @@ footer{
 
 }
 #s-3>img{
-    width: 2vw;
+    width: 1.2vw;
 }
 #s-3>img:nth-child(4){
     width: 4vw;
@@ -1010,5 +1016,5 @@ footer{
     padding-right: 1vw;
 }
 #s-3>img:nth-child(5){
-    width: 5vw;
+    width:4vw;
 }
